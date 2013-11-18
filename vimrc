@@ -3,6 +3,9 @@ call pathogen#infect()
 syntax on
 colorscheme distinguished
 
+filetype plugin on 
+let g:pydiction_location = '/home/syntonym/.vim/bundle/pydiction/complete-dict'
+
 imap <C-j> {
 imap <C-l> }
 imap <c-k> \
