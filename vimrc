@@ -10,3 +10,6 @@ imap <C-j> {
 imap <C-l> }
 imap <c-k> \
 imap <Nul> <Nop>
+
+set encoding=utf-8
+set fileencoding=utf-8
