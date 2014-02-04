@@ -11,5 +11,9 @@ imap <C-l> }
 imap <c-k> \
 imap <Nul> <Nop>
 
+map <c-l> <c-]>
+map <c-h> <c-t>
+map <c-i> g]
+
 set encoding=utf-8
 set fileencoding=utf-8
