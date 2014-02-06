@@ -7,9 +7,14 @@ set encoding=utf-8
 set fileencoding=utf-8
 
 " colortheme solarized
+"let g:solarized_termcolors=256
+let g:solarized_termtrans=1
 syntax on
 set background=dark
 colorscheme solarized
+
+" linenumbers
+set number
 
 
 " pydiction configeration
