@@ -21,6 +21,8 @@ set number
 filetype plugin on 
 let g:pydiction_location = '/home/syntonym/.vim/bundle/pydiction/complete-dict'
 
+set autoindent
+
 "
 " custom mappings
 "
