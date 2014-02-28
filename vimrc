@@ -16,10 +16,21 @@ colorscheme solarized
 " linenumbers
 set number
 
+let mapleader = "ö"
+map <Leader>h <C-w>h
+map <Leader>j <C-w>j
+map <Leader>k <C-w>k
+map <Leader>l <C-w>l
+map <Leader>f :NERDTree<CR>
+
+let NERDTreeQuitOnOpen = 1
 
 " pydiction configeration
 filetype plugin on 
 let g:pydiction_location = '/home/syntonym/.vim/bundle/pydiction/complete-dict'
+
+" vim-airline
+set laststatus=2
 
 set autoindent
 
