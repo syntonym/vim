@@ -26,7 +26,7 @@ map <Leader>f :NERDTree<CR>
 let NERDTreeQuitOnOpen = 1
 
 " pydiction configeration
-filetype plugin on 
+filetype plugin indent on 
 let g:pydiction_location = '/home/syntonym/.vim/bundle/pydiction/complete-dict'
 
 " vim-airline
