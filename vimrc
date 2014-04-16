@@ -1,5 +1,5 @@
-" pathogen 
-source ~/.vim/bundle/pathogen/autoload/pathogen.vim
+" pathogen
+source ~/vimfiles/bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
 " encoding
@@ -8,7 +8,6 @@ set fileencoding=utf-8
 
 " colortheme solarized
 "let g:solarized_termcolors=256
-let g:solarized_termtrans=1
 syntax on
 set background=dark
 colorscheme solarized
@@ -16,36 +15,40 @@ colorscheme solarized
 " linenumbers
 set number
 
-let mapleader = "ö"
-map <Leader>h <C-w>h
-map <Leader>j <C-w>j
-map <Leader>k <C-w>k
-map <Leader>l <C-w>l
-map <Leader>f :NERDTree<CR>
+set autoindent
 
-let NERDTreeQuitOnOpen = 1
-
-" pydiction configeration
-filetype plugin indent on 
-let g:pydiction_location = '/home/syntonym/.vim/bundle/pydiction/complete-dict'
+"activate filetypeplugins
+filetype plugin indent on
 
 " vim-airline
 set laststatus=2
 
-set autoindent
+" ultisnips
+let g:ultisnips_python_style = "google"
 
-"
+
 " custom mappings
-"
+
 " latex
-imap <C-j> {
-imap <C-l> }
-imap <c-k> \
-imap <Nul> <Nop>
+inoremap <C-j> {
+inoremap <C-l> }
+inoremap <c-k> \
+inoremap <Nul> <Nop>
 
 " ctags
 map <c-l> <c-]>
 map <c-h> <c-t>
-map <c-i> g]
+"<c-i> is the same as tab und this breaks stuff
+"look for some other mapping
+"map <c-i> g]
 
+"movement in tabs
+let mapleader = "ö"
+noremap <Leader>h <C-w>h
+noremap <Leader>j <C-w>j
+noremap <Leader>k <C-w>k
+noremap <Leader>l <C-w>l
 
+"nertree
+let NERDTreeQuitOnOpen = 1
+noremap <Leader>f :NERDTree<CR>
