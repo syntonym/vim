@@ -32,6 +32,9 @@ let g:ultisnips_python_style = "google"
 
 let mapleader = "ö"
 
+" map esc so it's easier on windows. Quite good on linux too
+inoremap jf <esc>
+
 " latex
 inoremap <C-j> {
 inoremap <C-l> }
