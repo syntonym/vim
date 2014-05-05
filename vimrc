@@ -48,4 +48,6 @@ map <c-l> <c-]>
 map <c-h> <c-t>
 map <c-i> g]
 
+map <leader>u :GundoToggle<CR>
+
 
