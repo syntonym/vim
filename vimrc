@@ -24,6 +24,8 @@ filetype plugin indent on
 " vim-airline
 set laststatus=2
 
+set backspace=2
+
 " ultisnips
 let g:ultisnips_python_style = "google"
 
@@ -31,6 +33,10 @@ let g:ultisnips_python_style = "google"
 " custom mappings
 
 let mapleader = "ö"
+
+let g:tagbar_autofocus = 1
+let g:tagbar_autoclose = 1
+noremap <F8> :TagbarToggle<cr>
 
 " map esc so it's easier on windows. Quite good on linux too
 inoremap jf <esc>
@@ -56,6 +62,11 @@ noremap <Leader>j <C-w>j
 noremap <Leader>k <C-w>k
 noremap <Leader>l <C-w>l
 
+"vim-dispatch
+noremap <leader>b :Dispatch<cr>
+noremap <leader>B :Dispatch!<cr>
+
+"nerdtree disabled
 "nerdtree
-let NERDTreeQuitOnOpen = 1
-noremap <Leader>f :NERDTree<CR>
+"let NERDTreeQuitOnOpen = 1
+"noremap <Leader>f :NERDTree<CR>
