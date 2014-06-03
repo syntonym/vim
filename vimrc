@@ -29,6 +29,9 @@ set backspace=2
 " ultisnips
 let g:ultisnips_python_style = "google"
 
+" vim-jedi
+let g:jedi#use_tabs_not_buffers = 0
+
 
 " custom mappings
 
