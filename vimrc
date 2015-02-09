@@ -1,7 +1,29 @@
-" pathogen
-source ~/.vim/bundle/pathogen/autoload/pathogen.vim
-call pathogen#infect()
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
 
+Plugin 'tpope/vim-fugitive'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'scrooloose/syntastic'
+Plugin 'bling/vim-airline'
+Plugin 'sjl/gundo.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'justinmk/vim-sneak'
+Plugin 'tpope/vim-dispatch'
+Plugin 'sirver/ultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'ervandew/supertab'
+Plugin 'tpope/vim-vinegar'
+Plugin 'majutsushi/tagbar'
+Plugin 'LaTeX-Box-Team/LaTeX-Box'
+Plugin 'pangloss/vim-javascript'
+Plugin 'Raimondi/delimitMate'
+Plugin 'kchmck/vim-coffee-script'
+call vundle#end()
+filetype plugin indent on
 " encoding
 set encoding=utf-8
 set fileencoding=utf-8
@@ -50,6 +72,10 @@ inoremap <C-l> }
 inoremap <c-k> \
 inoremap <Nul> <Nop>
 
+" 1 for async, but needs vim server mode
+let g:LatexBox_latexmk_async=0
+noremap <leader>ll :Latexmk<cr>:LatexmkClean<cr>
+
 " ctags
 map <c-l> <c-]>
 map <c-h> <c-t>
@@ -69,7 +95,21 @@ noremap <Leader>l <C-w>l
 noremap <leader>b :Dispatch<cr>
 noremap <leader>B :Dispatch!<cr>
 
+" UltiSnips
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<c-tab>"
+let g:UltiSnipsEditSplit="vertical"
+
 "nerdtree disabled
 "nerdtree
 "let NERDTreeQuitOnOpen = 1
 "noremap <Leader>f :NERDTree<CR>
+
+" When editing a file, always jump to the last known cursor position
+
+autocmd BufReadPost *
+			\ if line("'\"") > 1 && line("'\"") <= line("$") |
+			\   exe "normal! g`\"" |
+			\ endif
