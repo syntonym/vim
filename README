@@ -2,3 +2,5 @@ My configuration of vim, so i can clone it to all my workingstations (and use su
 
 CC-BY (if configs are able to be licensed at all)
 ~~Syntonym
+
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
