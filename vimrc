@@ -18,11 +18,11 @@ Plugin 'sirver/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-vinegar'
-Plugin 'majutsushi/tagbar'
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
 Plugin 'pangloss/vim-javascript'
 Plugin 'Raimondi/delimitMate'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'kien/ctrlp.vim'
 call vundle#end()
 filetype plugin indent on
 " encoding
@@ -103,10 +103,9 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<c-tab>"
 let g:UltiSnipsEditSplit="vertical"
 
-"nerdtree disabled
-"nerdtree
-"let NERDTreeQuitOnOpen = 1
-"noremap <Leader>f :NERDTree<CR>
+" Ctrlp
+noremap <leader>T :CtrlPMixed<CR>
+noremap <leader>t :CtrlPBuffer<CR>
 
 " When editing a file, always jump to the last known cursor position
 
