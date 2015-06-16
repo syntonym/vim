@@ -4,7 +4,6 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
-
 Plugin 'tpope/vim-fugitive'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'altercation/vim-colors-solarized'
@@ -13,7 +12,6 @@ Plugin 'bling/vim-airline'
 Plugin 'sjl/gundo.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'justinmk/vim-sneak'
-Plugin 'tpope/vim-dispatch'
 Plugin 'sirver/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'ervandew/supertab'
@@ -21,8 +19,10 @@ Plugin 'tpope/vim-vinegar'
 Plugin 'majutsushi/tagbar'
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
 Plugin 'pangloss/vim-javascript'
-Plugin 'Raimondi/delimitMate'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'godlygeek/tabular'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tmhedberg/SimpylFold'
 call vundle#end()
 filetype plugin indent on
 " encoding
@@ -46,6 +46,8 @@ filetype plugin indent on
 
 " vim-airline
 set laststatus=2
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 
 set backspace=2
 
@@ -86,11 +88,18 @@ map <c-h> <c-t>
 
 map <leader>u :GundoToggle<CR>
 
+"movement buffers
+noremap <leader>f :bnext<CR>
+noremap <leader>d :bprevious<CR>
+
 "movement in tabs
 noremap <Leader>h <C-w>h
 noremap <Leader>j <C-w>j
 noremap <Leader>k <C-w>k
 noremap <Leader>l <C-w>l
+
+"copy to clipbord
+vnoremap <Leader>c :w !xclip -selection clipboard<CR><CR>
 
 "vim-dispatch
 noremap <leader>b :Dispatch<cr>
@@ -103,10 +112,10 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<c-tab>"
 let g:UltiSnipsEditSplit="vertical"
 
-"nerdtree disabled
-"nerdtree
-"let NERDTreeQuitOnOpen = 1
-"noremap <Leader>f :NERDTree<CR>
+" CtrlP
+
+noremap <leader>t :CtrlPBuffer<CR>
+noremap <leader>T :CtrlPMixed<CR>
 
 " When editing a file, always jump to the last known cursor position
 
@@ -114,3 +123,6 @@ autocmd BufReadPost *
 			\ if line("'\"") > 1 && line("'\"") <= line("$") |
 			\   exe "normal! g`\"" |
 			\ endif
+
+"vim sneak Sneak
+let g:sneak#streak=1
